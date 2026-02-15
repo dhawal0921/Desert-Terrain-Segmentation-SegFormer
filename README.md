@@ -26,6 +26,7 @@ We utilized **SegFormer**, a transformer-based efficient segmentation architectu
 
 >### trained_model
 >  This folder contains the actual trained model.
+>  It also contains the weights of our model in the file -  "model.safetensors"
   
 ## Dataset & Class Mapping
 The dataset consists of synthetic off-road images. Although the problem statement listed 10 classes, the dataset contained only 6 unique classes. To stabilize training, we mapped the sparse IDs to a continuous range 0-5.
