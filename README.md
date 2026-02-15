@@ -68,6 +68,7 @@ The dataset consists of synthetic off-road images. Although the problem statemen
   ```
 
   Run this to install PyTorch in the Environment:
+  Note : This version of pytorch is supported by CUDA versions above 12.0
   ```bash
   pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
   ```
