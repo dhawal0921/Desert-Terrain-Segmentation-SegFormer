@@ -26,7 +26,7 @@ We utilized **SegFormer**, a transformer-based efficient segmentation architectu
 >### trained_model
 >  This folder contains the actual trained model.
   
->### Offroad_Segmentation_Training_Dataset
+> ### Offroad_Segmentation_Training_Dataset
 >  This is the training dataset for the model.
 
 > ### Offroad_Segmentation_testImages
