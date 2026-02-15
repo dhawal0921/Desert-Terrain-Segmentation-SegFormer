@@ -1,4 +1,4 @@
-Offroad Semantic Segmentation
+# Offroad Semantic Segmentation
 
 **Team Name:** The Iterators  
 **Track:** Computer Vision / Semantic Segmentation  
@@ -46,62 +46,63 @@ Note: The **"Ground" class (ID 2)** was **excluded** from **final IoU calculatio
 
 ### 2. Install the model (Anaconda Environment)
 
-Run the following command to setup an Anaconda Environment:
-```bash
-conda create -n desert_hack python=3.9 -y
-```
-```bash
-conda activate desert_hack
-```
+  Run the following command to setup an Anaconda Environment:
+  ```bash
+  conda create -n desert_hack python=3.9 -y
+  ```
+  ```bash
+  conda activate desert_hack
+  ```
 
-Run this to install PyTorch in the Environment:
-```bash
-pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
-```
+  Run this to install PyTorch in the Environment:
+  ```bash
+  pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+  ```
 
-Run the following command to install all necessary libraries:
-```bash
-pip install torch torchvision transformers evaluate opencv-python albumentations tqdm scipy
-```
+  Run the following command to install all necessary libraries:
+  ```bash
+  pip install torch torchvision transformers evaluate opencv-python albumentations tqdm scipy
+  ```
 
-Locate to your main Folder:
-```bash
-cd [FOLDER PATH CONTAINING train.py AND THE DATASET]
-```
+  Locate to your main Folder:
+  ```bash
+  cd [FOLDER PATH CONTAINING train.py AND THE DATASET]
+  ```
 
-## TRAINING MODEL
-In train.py file, line 29,
-Do the necessary changes,
-```bash
-BASE_PATH = r"[FOLDER PATH WITH DATASET & train.py\Offroad_Segmentation_Training_Dataset"
-```
+### TRAINING MODEL
+  **Update train.py**
+  In train.py file, line 29,
+  Do the necessary changes,
+  ```bash
+  BASE_PATH = r"[FOLDER PATH WITH DATASET & train.py\Offroad_Segmentation_Training_Dataset"
+  ```
 
-Training:
-Run the code below to start training.
-```bash
-python train.py
-```
+  **Training:**
+  Run the code below to start training.
+  ```bash
+  python train.py
+  ```
 
-## TESTING MODEL
-Run the code below to test the model:
-```bash
-python test.py --model_path "[MODEL PATH]" --test_img_dir "[FOLDER PATH]\Offroad_Segmentation_testImages\Color_Images" --test_msk_dir "[FOLDER PATH]\Offroad_Segmentation_testImages\Segmentation"
-```
+### TESTING MODEL
+  Run the code below to test the model:
+  ```bash
+  python test.py --model_path "[MODEL PATH]" --test_img_dir "[FOLDER PATH]\Offroad_Segmentation_testImages\Color_Images" --test_msk_dir "[FOLDER         PATH]\Offroad_Segmentation_testImages\Segmentation"
+  ```
 
 
 ## Key Results & Optimizations
 
-**1. Performance Metrics**
+### **1. Performance Metrics**
 *  	**Adjusted Mean IoU:** 0.5604 (Calculated over 5 active classes).
 *  	**Inference Speed:** ~39.40 ms/image (Passed <50ms limit).
   
-**2. Per-Class IoU**
+### **2. Per-Class IoU**
 *  **Obstacles:** 0.6976 (Reliable hazard detection).
 *  **Sky:** 0.5012 (Robust horizon line).
 *  **Vegetation:** 0.1525 (Significantly improved via logit tuning).
 *  **Landscapes:** 0.9866 (Near perfect terrain segmentation)
   
-**3. Critical Optimizations**
+### **3. Critical Optimizations**
 
 *  **Ground Exclusion:** We explicitly handled the missing "Ground" class in the metric calculation to prevent artificial score deflation.
 *  **Spatial Bias:** We utilized the structured nature of desert scenes (Sky at top, Road in middle) to inject spatial priors directly into the inference loop.
