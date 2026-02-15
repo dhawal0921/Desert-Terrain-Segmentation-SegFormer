@@ -17,17 +17,17 @@ We utilized **SegFormer**, a transformer-based efficient segmentation architectu
 
 ## File Information
 
-### train.py
-  This file [train.py](train.py), is used to train the model on the Training_Dataset.
+> ### train.py
+>  This file [train.py](train.py), is used to train the model on the Training_Dataset.
 
-### test.py
-  This file [test.py](test.py), is used to train the model on the Training_Dataset.
+>### test.py
+>  This file [test.py](test.py), is used to train the model on the Training_Dataset.
 
-### trained_model
-  This folder contains the actual trained model.
+>### trained_model
+>  This folder contains the actual trained model.
   
-### Offroad_Segmentation_Training_Dataset
-  This is the training dataset for the model.
+>### Offroad_Segmentation_Training_Dataset
+>  This is the training dataset for the model.
 
 ### Offroad_Segmentation_testImages
   This is the testing data for the model.
