@@ -15,6 +15,23 @@ We utilized **SegFormer**, a transformer-based efficient segmentation architectu
 * **Dataset:** Synthetic Desert Environment (FalconCloud)
 * **Optimization:** Mixed Precision Training (FP16), Data Augmentation (Albumentations), and Gradient Accumulation.
 
+## File Information
+
+### train.py
+  This file [View Training Script](train.py), is used to train the model on the Training_Dataset.
+
+### test.py
+  This file [View Training Script](test.py), is used to train the model on the Training_Dataset.
+
+### trained_model
+  This folder contains the actual trained model.
+  
+### Offroad_Segmentation_Training_Dataset
+  This is the training dataset for the model.
+
+### Offroad_Segmentation_testImages
+  This is the testing data for the model.
+  
 ## Dataset & Class Mapping
 The dataset consists of synthetic off-road images. Although the problem statement listed 10 classes, the dataset contained only 6 unique classes. To stabilize training, we mapped the sparse IDs to a continuous range 0-5.
 
@@ -74,7 +91,7 @@ Note: The **"Ground" class (ID 2)** was **excluded** from **final IoU calculatio
   In train.py file, line 29,
   Do the necessary changes,
   ```bash
-  BASE_PATH = r"[FOLDER PATH WITH DATASET & train.py\Offroad_Segmentation_Training_Dataset"
+  BASE_PATH = r"[FOLDER PATH WITH DATASET & train.py]\Offroad_Segmentation_Training_Dataset"
   ```
 
   **Training:**
@@ -86,7 +103,7 @@ Note: The **"Ground" class (ID 2)** was **excluded** from **final IoU calculatio
 ### TESTING MODEL
   Run the code below to test the model:
   ```bash
-  python test.py --model_path "[MODEL PATH]" --test_img_dir "[FOLDER PATH]\Offroad_Segmentation_testImages\Color_Images" --test_msk_dir "[FOLDER         PATH]\Offroad_Segmentation_testImages\Segmentation"
+  python test.py --model_path "[MODEL PATH]" --test_img_dir "[FOLDER PATH]\Offroad_Segmentation_testImages\Color_Images" --test_msk_dir "[FOLDER PATH]\Offroad_Segmentation_testImages\Segmentation"
   ```
 
 
