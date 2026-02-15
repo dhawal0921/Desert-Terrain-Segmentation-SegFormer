@@ -87,7 +87,8 @@ The dataset consists of synthetic off-road images. Although the problem statemen
   ```
 
 ### TRAINING MODEL
-  **Update train.py**
+  **Update [train.py](train.py)**
+
   In train.py file, line 29,
   Do the necessary changes,
   ```bash
