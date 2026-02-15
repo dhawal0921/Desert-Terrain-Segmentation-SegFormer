@@ -29,8 +29,8 @@ We utilized **SegFormer**, a transformer-based efficient segmentation architectu
 >### Offroad_Segmentation_Training_Dataset
 >  This is the training dataset for the model.
 
-### Offroad_Segmentation_testImages
-  This is the testing data for the model.
+> ### Offroad_Segmentation_testImages
+>   This is the testing data for the model.
   
 ## Dataset & Class Mapping
 The dataset consists of synthetic off-road images. Although the problem statement listed 10 classes, the dataset contained only 6 unique classes. To stabilize training, we mapped the sparse IDs to a continuous range 0-5.
@@ -44,7 +44,7 @@ The dataset consists of synthetic off-road images. Although the problem statemen
 | 27          | Obstacles (Rocks) | 4             |
 | 39          | Landscape         | 5             |
 
-Note: The **"Ground" class (ID 2)** was **excluded** from **final IoU calculations** because it was **absent** in the test set.
+> Note: The **"Ground" class (ID 2)** was **excluded** from **final IoU calculations** because it was **absent** in the test set.
 
 
 ## Configuration Details
